@@ -65,22 +65,10 @@ Let's describe 3 types of people: the hopeless, the prideful, and the willing. (
         humility, honesty, support, goals, prey, meaning, value, diligence, discipline, 
         determination, faith.
         
-        
 
-Upgrade FE to Angular 4
-https://medium.com/@satsukitv/converting-an-angularjs-1-5-app-to-angular-4-4b10c6cb8672
+
 
 Add Graphs: make a graph for all metrics.
-
-Add Metrics:
-brief anxiety:
-https://www.integration.samhsa.gov/clinical-practice/GAD708.19.08Cartwright.pdf
-
-brief depression:
-http://www.cqaimh.org/pdf/tool_phq9.pdf
-
-brief personality:
-https://socialwork.buffalo.edu/content/dam/socialwork/home/self-care-kit/brief-big-five-personality-inventory.pdf
 
 Add list of therapeutic categories (description and solutions):
 Cold therapy
@@ -91,6 +79,10 @@ Music
 Meditation (daily practice/ 10-day/half-day)
 
 Add font variety to github.io
+
+Upgrade to postgres
+
+
 
 
 
