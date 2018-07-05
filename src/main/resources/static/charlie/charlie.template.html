@@ -1,0 +1,17 @@
+<div ng-controller = "UserInfoController as userCtrl">
+    <div id="charlie">
+     {{$ctrl.response}}
+    </div>
+    <br />
+    <input ng-model="$ctrl.userInput" placeholder="Say hello" type="text" />
+    <br />
+    <br />
+    <button ng-click="$ctrl.chat()">Send your message!</button>
+
+    <div id="user">
+     Name: {{$ctrl.userData}}
+    <br>
+     Location: {{$ctrl.latlon}}
+     <div id="mapholder"></div>
+    </div>
+</div>
