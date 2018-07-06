@@ -83,6 +83,16 @@ Add font variety to github.io
 Upgrade to postgres
 
 
+MVP?
+
+        - Intake
+        - Chatbot
+        - Analytics
+        - OAUTH
+        - Gamification POC?
+        - Jungian analysis?
+
+
 
 
 
