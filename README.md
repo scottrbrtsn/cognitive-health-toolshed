@@ -23,6 +23,8 @@ Depression
 
 TODO
 Initial questions (adaptive questioning)
+Add mystical experience quesionairre 
+https://dl.airtable.com/HGvN0A4eQHCIhyVy9dWQ_Barrett2015MysticalExperience.pdf
 
 Let's describe 3 types of people: the hopeless, the prideful, and the willing. (The spectrum of pride)
 
