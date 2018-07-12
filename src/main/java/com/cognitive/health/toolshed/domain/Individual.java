@@ -9,12 +9,12 @@ import java.util.Random;
 public class Individual {
 
     int fitness = 0;
-    int[] traits = new int[5];
+    int[] traits = new int[5];//break these up into savable individual traits
 
     public Individual() {
         Random rn = new Random();
 
-        //Set traits randomly for each individual
+        //Set traits based on user input value for each individual
         for (int i = 0; i < traits.length; i++) {
             traits[i] = Math.abs(rn.nextInt() % 2);
         }

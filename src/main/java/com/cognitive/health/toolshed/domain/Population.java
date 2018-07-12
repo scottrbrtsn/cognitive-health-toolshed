@@ -22,12 +22,12 @@ public class Population {
         int maxFit = Integer.MIN_VALUE;
         int maxFitIndex = 0;
         for (int i = 0; i < individuals.length; i++) {
-            if (maxFit <= individuals[i].fitness) {
-                maxFit = individuals[i].fitness;
+            if (maxFit <= individuals[i].getFitness()) {
+                maxFit = individuals[i].getFitness();
                 maxFitIndex = i;
             }
         }
-        fittest = individuals[maxFitIndex].fitness;
+        fittest = individuals[maxFitIndex].getFitness();
         return individuals[maxFitIndex];
     }
 
@@ -36,10 +36,10 @@ public class Population {
         int maxFit1 = 0;
         int maxFit2 = 0;
         for (int i = 0; i < individuals.length; i++) {
-            if (individuals[i].fitness > individuals[maxFit1].fitness) {
+            if (individuals[i].getFitness() > individuals[maxFit1].getFitness()) {
                 maxFit2 = maxFit1;
                 maxFit1 = i;
-            } else if (individuals[i].fitness > individuals[maxFit2].fitness) {
+            } else if (individuals[i].getFitness() > individuals[maxFit2].getFitness()) {
                 maxFit2 = i;
             }
         }
@@ -51,8 +51,8 @@ public class Population {
         int minFitVal = Integer.MAX_VALUE;
         int minFitIndex = 0;
         for (int i = 0; i < individuals.length; i++) {
-            if (minFitVal >= individuals[i].fitness) {
-                minFitVal = individuals[i].fitness;
+            if (minFitVal >= individuals[i].getFitness()) {
+                minFitVal = individuals[i].getFitness();
                 minFitIndex = i;
             }
         }
