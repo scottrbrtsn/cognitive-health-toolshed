@@ -2,57 +2,84 @@ package com.cognitive.health.toolshed.domain;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 //@Entity
 @Data
 public class Population {
 
     //TODO customize size of population, or add population growth
-    int popSize = 10;
-    Individual[] individuals = new Individual[10];
-    int fittest = 0;
+    private int popSize = 10;
+    private List<Individual> individuals = new ArrayList<>();
+    private int [] initialFather = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+    private int [] initialMother = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
 
-    public void initializePopulation() {
-        for (int i = 0; i < individuals.length; i++) {
-            individuals[i] = new Individual();
+    public void initializePopulation() {//get values from user
+      
+//        for (int i = 0; i < 10; i++) {//the first population offspring of mother and father
+//            individuals.add(new Individual(initialFather, initialMother));
+//        }
+        Random rn = new Random();
+        int [] initDad = {rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11)};
+        int [] initMom = {rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11),
+                rn.nextInt(11), rn.nextInt(11)};
+        for (int i = 0; i < 10; i++) {//the first population offspring of mother and father
+            individuals.add(new Individual(initDad, initMom));
         }
     }
 
     //TODO get Fittest Male
-    public Individual getFittest() {
+    public Individual getFittestMale() {
         int maxFit = Integer.MIN_VALUE;
         int maxFitIndex = 0;
-        for (int i = 0; i < individuals.length; i++) {
-            if (maxFit <= individuals[i].getFitness()) {
-                maxFit = individuals[i].getFitness();
-                maxFitIndex = i;
+        Individual ind;
+        for (int i = 0; i < individuals.size(); i++) {
+            ind = individuals.get(i);
+            if(ind.getGender().equals("male")) {
+                if (maxFit <= individuals.get(i).getFitness()) {
+                    maxFit = individuals.get(i).getFitness();
+                    maxFitIndex = i;
+                }
             }
         }
-        fittest = individuals[maxFitIndex].getFitness();
-        return individuals[maxFitIndex];
+        return individuals.get(maxFitIndex);
     }
 
     //TODO get Fittest Female
-    public Individual getSecondFittest() {
-        int maxFit1 = 0;
-        int maxFit2 = 0;
-        for (int i = 0; i < individuals.length; i++) {
-            if (individuals[i].getFitness() > individuals[maxFit1].getFitness()) {
-                maxFit2 = maxFit1;
-                maxFit1 = i;
-            } else if (individuals[i].getFitness() > individuals[maxFit2].getFitness()) {
-                maxFit2 = i;
+    public Individual getFittestFemale() {
+        int maxFit = 0;
+        Individual ind;
+        int maxFitIndex = 0;
+        for (int i = 0; i < individuals.size(); i++) {
+            ind = individuals.get(i);
+            if(ind.getGender().equals("female")) {
+                if (maxFit <= individuals.get(i).getFitness()) {
+                    maxFit = individuals.get(i).getFitness();
+                    maxFitIndex = i;
+                }
             }
         }
-        return individuals[maxFit2];
+        return individuals.get(maxFitIndex);
     }
 
     //Get index of least fittest individual
     public int getLeastFittestIndex() {
         int minFitVal = Integer.MAX_VALUE;
         int minFitIndex = 0;
-        for (int i = 0; i < individuals.length; i++) {
-            if (minFitVal >= individuals[i].getFitness()) {
-                minFitVal = individuals[i].getFitness();
+        for (int i = 0; i < individuals.size(); i++) {
+            if (minFitVal >= individuals.get(i).getFitness()) {
+                minFitVal = individuals.get(i).getFitness();
                 minFitIndex = i;
             }
         }
@@ -63,10 +90,9 @@ public class Population {
     //TODO calculate fitness based on trait values
     public void calculateFitness() {
 
-        for (int i = 0; i < individuals.length; i++) {
-            individuals[i].calcFitness();
+        for (int i = 0; i < individuals.size(); i++) {
+            individuals.get(i).calcFitness("male", initialFather, initialMother);
         }
-        getFittest();
     }
 
     public void calculateIndividualConsequences(){
@@ -79,7 +105,7 @@ public class Population {
 
     }
 
-    public void calculatePopulationConsequences(){
+    public void executePopulationConsequences(){
         //unbalanced society will lead to destruction
         //
     }

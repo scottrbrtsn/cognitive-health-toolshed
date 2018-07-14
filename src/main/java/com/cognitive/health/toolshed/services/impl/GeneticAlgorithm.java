@@ -12,130 +12,102 @@ import java.util.Random;
 public class GeneticAlgorithm implements IGeneticAlgorithm {
     private static final Logger LOGGER = Logger.getLogger(GeneticAlgorithm.class.getName());
 
-    Population population = new Population();
-    Individual fittest;
-    Individual secondFittest;
-    int generationCount = 0;
+    private Population population;
+    private Individual fittestMale;
+    private Individual fittestFemale;
+    private int generationCount = 0;
 
     @Override
     public String runGeneticAlgorithm() {
 
         Random rn = new Random();
-
+        population = new Population();
         //Initialize population
         population.initializePopulation();
 
         //Calculate fitness of each individual
         population.calculateFitness();
 
-       LOGGER.info("Generation: " + generationCount + " Fittest: " + population.getFittest());
+       LOGGER.info("Generation: " + generationCount + " FittestMale: " + population.getFittestMale());
+        LOGGER.info("Generation: " + generationCount + " FittestFemale: " + population.getFittestFemale());
+        String toReturn = "Starting Fittest Male: " + population.getFittestMale()
+                + "Starting Fittest Female: " + population.getFittestFemale();
 
         //While population does not get an individual with maximum fitness
-        while (population.getFittest().getFitness() < 5) {
+        while (population.getFittestMale().getFitness() < 120
+                && population.getFittestFemale().getFitness() < 120
+                    && population.getIndividuals().size() < 20000) {
             ++generationCount;
 
             //Do selection
             selection();
 
-            //Do crossover
-            crossover();
-
-            //Do mutation under a random probability
-            if (rn.nextInt() % 7 < 5) {
-                mutation();
-            }
 
             //Add fittest offspring to population
             addFittestOffspring();
 
             //Calculate new fitness value
-            population.calculateFitness();
+          //  population.calculateFitness();
 
-            LOGGER.info("Generation: " + generationCount + " Fittest: " + population.getFittest().getFitness());
+            LOGGER.info("Generation: " + generationCount + " FittestMale: " + population.getFittestMale());
+            LOGGER.info("Generation: " + generationCount + " FittestFemale: " + population.getFittestFemale());
+            LOGGER.info("Generation: " + generationCount + " PopulationSize: " + population.getIndividuals().size());
+
         }
+        toReturn = toReturn + "After " + population.getIndividuals().size() + "Generations, "
+                + "Ending Fittest Male: " + population.getFittestMale()
+                + "Ending Fittest Female: " + population.getFittestFemale();
 
-        LOGGER.info("Solution found in generation " + generationCount);
-        LOGGER.info("Fitness: " + population.getFittest().getFitness());
-        LOGGER.info("Traits: ");
-        LOGGER.info(population.getFittest().getTraits());
-        LOGGER.info("");
-
-        return "Generation: " + generationCount + " Fittest: " + population.getFittest().getFitness();
+        return toReturn;
 
     }
 
     //Selection
     //Assumes asexuality
     //TODO: make gender differences, so, get fittestMale, getFittestFemale
-    private void selection() {
+    private void selection() {//based on gender of the user
         //Select the fittest individual
-        fittest = population.getFittest();
+        fittestMale = population.getFittestMale();
 
         //Select the second fittest individual
-        secondFittest = population.getSecondFittest();
-    }
-
-    //Crossover
-    private void crossover() {
-        Random rn = new Random();
-
-        //Select a random crossover point
-        int crossOverPoint = rn.nextInt(population.getIndividuals()[0].getTraits().length);
-
-        //Swap values among parents
-        for (int i = 0; i < crossOverPoint; i++) {
-            int temp = fittest.getTraits()[i];
-            fittest.getTraits()[i] = secondFittest.getTraits()[i];
-            secondFittest.getTraits()[i] = temp;
-
-        }
-
+        fittestFemale = population.getFittestFemale();
     }
 
     //Mutation
-    private void mutation() {
+    private void mutation(Individual ind) {
         Random rn = new Random();
 
         //Select a random mutation point
-        int mutationPoint = rn.nextInt(population.getIndividuals()[0].getTraits().length);
+        int mutationPoint = rn.nextInt(population.getIndividuals().get(0).getTraits().length);
+        LOGGER.info("MutationPoint: " + mutationPoint);
 
-        //Flip values at the mutation point
-        if (fittest.getTraits()[mutationPoint] == 0) {
-            fittest.getTraits()[mutationPoint] = 1;
-        } else {
-            fittest.getTraits()[mutationPoint] = 0;
-        }
+        //Mutate values at the mutation point
+        ind.getTraits()[mutationPoint] = rn.nextInt(11);
 
-        mutationPoint = rn.nextInt(population.getIndividuals()[0].getTraits().length);
-
-        if (secondFittest.getTraits()[mutationPoint] == 0) {
-            secondFittest.getTraits()[mutationPoint] = 1;
-        } else {
-            secondFittest.getTraits()[mutationPoint] = 0;
-        }
     }
 
     //Get fittest offspring
     private Individual getFittestOffspring() {
-        if (fittest.getFitness() > secondFittest.getFitness()) {
-            return fittest;
+        if (fittestMale.getFitness() > fittestFemale.getFitness()) {
+            return fittestMale;
         }
-        return secondFittest;
+        return fittestFemale;
     }
-
 
     //Replace least fittest individual from most fittest offspring
     private void addFittestOffspring() {
+        Individual ind = new Individual(
+                fittestMale.getTraits(), fittestFemale.getTraits());
 
-        //Update fitness values of offspring
-        fittest.calcFitness();
-        secondFittest.calcFitness();
+        Random rn = new Random();
+        if (rn.nextInt() % 7 < 5) {
+            mutation(ind);
+        }
+        ind.calcFitness("male",
+                population.getInitialFather(),
+                population.getInitialMother());
 
-        //Get index of least fit individual
-        int leastFittestIndex = population.getLeastFittestIndex();
-
-        //Replace least fittest individual from most fittest offspring
-        population.getIndividuals()[leastFittestIndex] = getFittestOffspring();
+        population.getIndividuals().add(ind);
     }
 
 }
