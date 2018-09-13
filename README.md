@@ -26,7 +26,7 @@ Depression
 @requires 
 - Java
 - Maven
- -Postgres
+- Postgres
 - `mvn spring-boot:run`
 - `http://localhost:9000/index.html`
 
