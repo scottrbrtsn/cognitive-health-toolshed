@@ -30,7 +30,7 @@ Depression
 - `mvn spring-boot:run`
 - `http://localhost:9000/index.html`
 
-TODO
+## TODO
 Initial questions (adaptive questioning)
 Add mystical experience quesionairre 
 https://dl.airtable.com/HGvN0A4eQHCIhyVy9dWQ_Barrett2015MysticalExperience.pdf
