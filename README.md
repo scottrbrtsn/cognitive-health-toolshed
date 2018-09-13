@@ -22,6 +22,13 @@ Mindfulness
 Anxiety
 Depression
 
+## To Run
+@requires 
+Java
+Maven
+Postgres
+`mvn spring-boot:run`
+`http://localhost:9000/index.html`
 
 TODO
 Initial questions (adaptive questioning)
