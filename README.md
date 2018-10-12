@@ -11,8 +11,10 @@ them.  So as you are more aware, and more present, your flow and mindfulness sco
 mental health issues and are using these tools to get out of a funk, you can use the mental health scales to monitor 
 progress there as well.  Theoretically, as flow and mindfulness increase, anxiety and depression scales should decrease.  
 
-After a week you should be able to see a graph of all your scores.  After 30 days, a trend should form as long as you are practicing 
+WIP (graph not implemented):  After a week you should be able to see a graph of all your scores.  After 30 days, a trend should form as long as you are practicing 
 and measuring daily.  
+
+WIP Moving the UI from /resources/static to https://github.com/scottrbrtsn/cognitive-health-ui
 
 Metrics:
 Flow
@@ -20,8 +22,15 @@ Mindfulness
 Anxiety
 Depression
 
+## To Run
+@requires 
+- Java
+- Maven
+- Postgres
+- `mvn spring-boot:run`
+- `http://localhost:9000/index.html`
 
-TODO
+## TODO
 Initial questions (adaptive questioning)
 Add mystical experience quesionairre 
 https://dl.airtable.com/HGvN0A4eQHCIhyVy9dWQ_Barrett2015MysticalExperience.pdf
