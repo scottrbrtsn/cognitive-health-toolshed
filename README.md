@@ -28,7 +28,8 @@ Depression
 - Maven
 - Postgres
 - `mvn spring-boot:run`
-- `http://localhost:9000/index.html`
+- `http://localhost:9000/surveys/anxiety/getSurveys`
+    -  Go to src/main/java/com/cognitive/health/toolshed/controllers for more endpoints
 
 ## TODO
 Initial questions (adaptive questioning)

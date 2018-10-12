@@ -1,5 +1,4 @@
 -- noinspection SqlNoDataSourceInspectionForFile
-
 CREATE TABLE flow(
   id BIGSERIAL PRIMARY KEY,
   survey_name VARCHAR,
