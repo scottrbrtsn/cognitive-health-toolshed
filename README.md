@@ -31,6 +31,19 @@ Depression
 - `http://localhost:9000/surveys/anxiety/getSurveys`
     -  Go to src/main/java/com/cognitive/health/toolshed/controllers for more endpoints
 
+## To Test
+
+1. Go to : https://github.com/scottrbrtsn/cognitive-health-ui
+2. Clone and run the toolshed. (requires maven: `mvn clean spring-boot:run`, also requires postgres to be running with a database created called `cognitive-health-toolshed`)
+3. Run the development server `ng serve`
+4. Look at the controllers to see the various endpoints to test.
+5. Fill out a survey and verify data saved
+
+## To Do
+
+- Push both ui and toolshed to AWS for a prod instance.
+
+
 ## TODO
 Initial questions (adaptive questioning)
 Add mystical experience quesionairre 
