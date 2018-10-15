@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/geneticAlgorithm")
 public class GeneticAlgorithmController {
-    private static final Logger LOGGER = Logger.getLogger(GeneticAlgorithmController.class.getName());
 
+    private static final Logger LOGGER = Logger.getLogger(GeneticAlgorithmController.class.getName());
 
     @Autowired
     IGeneticAlgorithm geneticAlgorithm;

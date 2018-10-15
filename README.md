@@ -42,6 +42,7 @@ Depression
 ## To Do
 
 - Push both ui and toolshed to AWS for a prod instance.
+- Break up toolshed into microservices...
 
 
 ## TODO
