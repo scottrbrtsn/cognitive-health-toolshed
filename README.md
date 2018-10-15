@@ -38,7 +38,10 @@ Depression
 3. Run the development server `ng serve`
 4. Look at the controllers to see the various endpoints to test.
 5. Fill out a survey and verify data saved
-
+6. Setup Markov Chat
+    -  `http://localhost:9000/chat/setup?author=Whitman` or check `resources/literature/` for complete list of Author.txt
+    -  `http://localhost:9000/chat/getMarkov?userInput=Hello+I+love+to+talk+grass.` as an example to query for the next line.  
+ 
 ## To Do
 
 - Push both ui and toolshed to AWS for a prod instance.
