@@ -69,6 +69,8 @@ public class Flow {
     @Column
     private int fssC;
 
+    @Column int total;
+
     @Column
     private Timestamp dateRecorded;
 

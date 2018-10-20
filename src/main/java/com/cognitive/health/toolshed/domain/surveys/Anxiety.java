@@ -45,6 +45,9 @@ public class Anxiety {
     private int gad8;
 
     @Column
+    private int total;
+
+    @Column
     private Timestamp dateRecorded;
     
 }

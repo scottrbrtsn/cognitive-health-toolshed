@@ -44,6 +44,7 @@ Depression
  
 ## To Do
 
+- implement scoring for all surveys/instruments
 - Push both ui and toolshed to AWS for a prod instance.
 - Break up toolshed into microservices...
 

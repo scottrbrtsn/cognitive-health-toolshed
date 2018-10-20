@@ -52,5 +52,8 @@ public class Depression {
     private int phq10;
 
     @Column
+    private int total;
+
+    @Column
     private Timestamp dateRecorded;
 }

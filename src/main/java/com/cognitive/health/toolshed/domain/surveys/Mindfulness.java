@@ -64,5 +64,8 @@ public class Mindfulness {
     private int smile;
 
     @Column
+    private int total;
+
+    @Column
     private Timestamp dateRecorded;
 }

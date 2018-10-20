@@ -19,6 +19,7 @@ CREATE TABLE flow(
   fssa INT,
   fssb INT,
   fssc INT,
+  total INT,
   date_recorded TIMESTAMP
 );
 
@@ -34,6 +35,7 @@ CREATE TABLE anxiety(
   gad6 INT,
   gad7 INT,
   gad8 INT,
+  total INT,
   date_recorded TIMESTAMP
 );
 
@@ -51,6 +53,7 @@ CREATE TABLE depression(
   phq8 INT,
   phq9 INT,
   phq10 INT,
+  total INT,
   date_recorded TIMESTAMP
 );
 
@@ -72,6 +75,7 @@ CREATE TABLE mindfulness(
   peace INT,
   patient INT,
   smile INT,
+  total INT,
   date_recorded TIMESTAMP
 );
 
