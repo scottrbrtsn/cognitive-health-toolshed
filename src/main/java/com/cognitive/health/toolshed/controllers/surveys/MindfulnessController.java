@@ -17,7 +17,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "/surveys/mindfulness")
-@CrossOrigin(origins ="http://localhost:4200")
+@CrossOrigin(origins ="https://cognitive-health-ui.herokuapp.com")
 public class MindfulnessController {
 
     @Autowired

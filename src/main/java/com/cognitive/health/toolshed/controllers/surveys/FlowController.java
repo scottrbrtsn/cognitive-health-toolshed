@@ -18,7 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "/surveys/flow")
-@CrossOrigin(origins ="http://localhost:4200")
+@CrossOrigin(origins ="https://cognitive-health-ui.herokuapp.com")
 public class FlowController {
 
     @Autowired
