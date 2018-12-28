@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/geneticAlgorithm")
-@CrossOrigin(origins ="https://cognitive-health-ui.herokuapp.com,https://scottrbrtsn.github.io")
+@CrossOrigin(origins ="https://scottrbrtsn.github.io")
 public class GeneticAlgorithmController {
 
     private static final Logger LOGGER = Logger.getLogger(GeneticAlgorithmController.class.getName());

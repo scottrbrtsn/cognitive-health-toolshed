@@ -13,7 +13,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping(value = "/chat")
-@CrossOrigin(origins ="https://cognitive-health-ui.herokuapp.com,https://scottrbrtsn.github.io")
+@CrossOrigin(origins ="https://scottrbrtsn.github.io")
 public class ChatController {
 
     private static final Logger LOGGER = Logger.getLogger(ChatController.class.getName());

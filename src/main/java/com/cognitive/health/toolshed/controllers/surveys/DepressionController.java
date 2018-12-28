@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @RestController
 @RequestMapping(value = "/surveys/depression")
-@CrossOrigin(origins ="https://cognitive-health-ui.herokuapp.com,https://scottrbrtsn.github.io")
+@CrossOrigin(origins ="https://scottrbrtsn.github.io")
 public class DepressionController {
 
     @Autowired

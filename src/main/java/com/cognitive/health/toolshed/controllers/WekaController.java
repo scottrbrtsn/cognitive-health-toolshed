@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/weka")
-@CrossOrigin(origins ="https://cognitive-health-ui.herokuapp.com,https://scottrbrtsn.github.io")
+@CrossOrigin(origins ="https://scottrbrtsn.github.io")
 public class WekaController {
 
     private static final Logger LOGGER = Logger.getLogger(WekaController.class.getName());
