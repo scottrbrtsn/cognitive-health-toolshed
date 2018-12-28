@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/surveys/personality")
-@CrossOrigin(origins ="https://cognitive-health-ui.herokuapp.com")
+@CrossOrigin(origins ="https://cognitive-health-ui.herokuapp.com,https://scottrbrtsn.github.io")
 public class PersonalityController {
 
     @Autowired
