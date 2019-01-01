@@ -112,7 +112,6 @@ Add font variety to github.io
 
 Upgrade to postgres
 
-
 MVP?
 
         - Intake
@@ -121,8 +120,3 @@ MVP?
         - OAUTH
         - Gamification POC?
         - Jungian analysis?
-
-
-
-
-
