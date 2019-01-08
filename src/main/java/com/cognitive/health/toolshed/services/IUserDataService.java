@@ -6,4 +6,6 @@ public interface IUserDataService {
 
     UserData getUserData(String userName);
 
+    UserData temp(String userName);
+
 }
