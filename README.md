@@ -42,6 +42,12 @@ Depression
     -  `http://localhost:9000/chat/setup?author=Whitman` or check `resources/literature/` for complete list of Author.txt
     -  `http://localhost:9000/chat/getMarkov?userInput=Hello+I+love+to+talk+grass.` as an example to query for the next line.  
  
+## Now with Spring Cloud Netflix
+
+- Eureka
+    - http://localhost:9000/health
+    - http://localhost:9000/info
+
 ## To Do
 
 - implement scoring for all surveys/instruments
