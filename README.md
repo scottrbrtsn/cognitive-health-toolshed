@@ -45,8 +45,12 @@ Depression
 ## Now with Spring Cloud Netflix
 
 - Eureka
-    - http://localhost:9000/health
-    - http://localhost:9000/info
+    - `http://localhost:9000/health`
+    - `http://localhost:9000/info`
+    - `http://localhost:9000/hystrix`
+        - then to monitor the stream: `http://localhost:9000/hystrix.stream`
+        - add delay and app name
+        - get siege or some other load tester to simulate traffic
 
 ## To Do
 
